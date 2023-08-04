@@ -29,6 +29,7 @@ html {
   font-family: 'Poppins', sans-serif;
   width: auto;
   height: auto;
+  object-fit: fill;
 }
 
 .hero .title {
