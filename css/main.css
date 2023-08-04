@@ -350,7 +350,6 @@ body.preloader-site {
   z-index: 2;
   justify-content: space-around;
   width: 100%;
-  background-color: white;
 }
 .navbar-menu {
   flex-grow: 0.5;
