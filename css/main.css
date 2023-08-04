@@ -23,12 +23,14 @@ html {
   background-image: url(../img/forest-gf927bc35f_1920.jpg);
   background: linear-gradient(rgba(154, 153, 118, 0.329), rgba(154, 153, 118, 0.8)), rgba(0, 0, 0, 0.55) url("../img/forest-gf927bc35f_1920.jpg") no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Poppins', sans-serif;
   object-fit: cover;
 }
+
+
 
 .hero .title {
   font-family: 'Kaushan Script', sans-serif;
