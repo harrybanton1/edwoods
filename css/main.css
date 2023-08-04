@@ -361,6 +361,7 @@ body.preloader-site {
 .navbar-menu .navbar-item {
   flex-grow: 1;
   justify-content: center;
+  color: whitesmoke;
 }
 .navbar-menu .navbar-item .control {
   width: 50%;
