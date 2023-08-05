@@ -142,13 +142,13 @@ html {
   }
 }
 
-.main-logo-image {
+.main-logo-img {
   height:50%;
   width: 50%;
 }
 
 @media (max-width: 599px) {
-  .main-logo-image{
+  .main-logo-img{
     height: 70%;
     width: 70%;
   }
@@ -238,7 +238,7 @@ html {
 
 .main-content .section-color.services {
   padding: 100px;
-  background-color: #43485c;
+  background-color: #999775;
   color: white;
 }
 
