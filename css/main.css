@@ -143,13 +143,13 @@ html {
   }
 }
 
-.main-logo-image {
+.main-logo-img {
   height:50%;
   width: 50%;
 }
 
 @media (max-width: 599px) {
-  .main-logo-image{
+  .main-logo-img{
     height: 70%;
     width: 70%;
   }
