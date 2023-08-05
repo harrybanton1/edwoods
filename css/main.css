@@ -256,7 +256,7 @@ html {
   height: 80px;
   line-height: 25px;
   text-align: center;
-  background: #1f2c6c;
+  background: #95afc0;
   color: whitesmoke;
   padding-top: 2rem;
 }
@@ -361,4 +361,8 @@ body.preloader-site {
 }
 .navbar-menu .navbar-item .control {
   width: 50%;
+}
+
+.padding{
+  padding-left: 80px;
 }
