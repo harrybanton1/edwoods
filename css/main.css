@@ -94,7 +94,7 @@ html {
 
 .main-content {
   padding-top: 2rem;
-  color: #3c4172;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -253,7 +253,7 @@ html {
 }
 
 .main-content .section-title {
-  color: #43485c;
+  color: #000000;
   text-transform: uppercase;
   font-size: 1.8rem;
   letter-spacing: 2px;
