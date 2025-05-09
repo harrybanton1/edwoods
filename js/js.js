@@ -55,3 +55,77 @@ $(window).on("load", function() {
   var Body = $("body");
   Body.addClass("preloader-site");
 });
+
+//lightbox
+document.addEventListener("DOMContentLoaded", function () {
+  let currentIndex = 0;
+  const images = Array.from(document.querySelectorAll(".work-item")).map(item =>
+    item.style.backgroundImage.replace('url("', '').replace('")', '')
+  );
+
+  function openLightbox(index) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const navbar = document.getElementById("navbar");
+
+    currentIndex = index;
+
+    if (lightbox && lightboxImg && navbar) {
+      lightboxImg.src = images[currentIndex];
+      lightbox.style.display = "flex";
+
+      // Hide navbar
+      navbar.dataset.originalDisplay = navbar.style.display;
+      navbar.style.display = "none";
+
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    const navbar = document.getElementById("navbar");
+
+    if (lightbox && navbar) {
+      lightbox.style.display = "none";
+
+      // Restore navbar
+      navbar.style.display = navbar.dataset.originalDisplay || "";
+
+      // Enable scrolling
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("lightbox-img").src = images[currentIndex];
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("lightbox-img").src = images[currentIndex];
+  }
+
+  document.querySelectorAll(".work-item").forEach((item, index) => {
+    item.addEventListener("click", function () {
+      openLightbox(index);
+    });
+  });
+
+  document.getElementById("lightbox").addEventListener("click", function (event) {
+    if (
+      event.target !== document.getElementById("lightbox-img") &&
+      event.target !== document.getElementById("next-btn") &&
+      event.target !== document.getElementById("prev-btn")
+    ) {
+      closeLightbox();
+    }
+  });
+
+  document.getElementById("next-btn").addEventListener("click", nextImage);
+  document.getElementById("prev-btn").addEventListener("click", prevImage);
+});

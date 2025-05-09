@@ -25,70 +25,47 @@
     <!-- End Preloader-->
     <!-- Begin Scroll Up Button -->
 
-    <form action="#home">
-      <button id="toTop" title="Go to top">
-        <i class="fas fa-angle-up"></i>
-      </button>
-    </form>
-    <!-- End Scroll Up Button -->
+    <!-- Scroll Up Button -->
+<form action="#home">
+  <button id="toTop" title="Go to top" class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</form>
 
-    <!-- Begin Header -->
-    <div class="header-wrapper" id="home">
-      <!-- Begin Hero -->
-      <section class="hero is-fullheight">
-        <!-- Begin Mobile Nav -->
-        <nav class="navbar" style="background-color: white;">
-          <!-- Begin Burger Menu -->
-          <div class="navbar-brand">
-            <div class="navbar-burger burger" data-target="mobile-nav">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <!-- End Burger Menu -->
-          <div id="mobile-nav" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <a class="navbar-item" href="#home">
-                  Home
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#about-me">
-                  About Us
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#services">
-                  Services
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#my-work">
-                  Our Work
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#contact">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <!-- End Mobile Nav -->
-        <!-- Begin Hero Content-->
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <img class="main-logo-img" src="./img/logoMain.png">
-          </div>
+<!-- Header -->
+<div class="header-wrapper" id="home">
+  <!-- Hero Section -->
+  <section class="hero is-fullheight">
+
+    <!-- Mobile Nav -->
+    <nav class="navbar" id="navbar"> <!-- Added id="navbar" -->
+      <div class="navbar-brand">
+        <div class="navbar-burger burger" data-target="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <!-- End Hero Content-->
+      </div>
+      <div id="mobile-nav" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#home">Home</a>
+          <a class="navbar-item" href="#about-me">About Us</a>
+          <a class="navbar-item" href="#services">Services</a>
+          <a class="navbar-item" href="#my-work">Our Work</a>
+          <a class="navbar-item" href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-      </section>
-      <!-- End Hero -->
+    <!-- Hero Content -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <img class="main-logo-img" src="./img/logoMain.png">
+      </div>
     </div>
+
+  </section>
+</div>
     <!-- End Header -->
 
     <!-- Begin Main Content -->
@@ -229,81 +206,71 @@
       <!-- Begin Work Content -->
       <div class="section-dark my-work" id="my-work">
         <div class="container">
-          <div
-            class="columns is-multiline"
-            data-aos="fade-in"
-            data-aos-easing="linear"
-          >
+          <div class="columns is-multiline" data-aos="fade-in" data-aos-easing="linear">
             <div class="column is-12">
               <h1 class="title has-text-centered section-title">Our Work</h1>
             </div>
+
+            <!-- Images -->
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/1.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpeg');" onclick="openLightbox('./img/1.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/2.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/2.jpeg');" onclick="openLightbox('./img/2.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/3.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpeg');" onclick="openLightbox('./img/3.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/4.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpeg');" onclick="openLightbox('./img/1.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/5.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/2.jpeg');" onclick="openLightbox('./img/2.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/6.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpeg');" onclick="openLightbox('./img/3.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/7.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/2.jpeg');" onclick="openLightbox('./img/2.jpeg')"></figure>
             </div>
             <div class="column is-3">
-              <a href="#">
-                <figure
-                  class="image is-2by1 work-item"
-                  style="background-image: url('./img/8.jpeg');"
-                ></figure>
-              </a>
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpeg');" onclick="openLightbox('./img/3.jpeg')"></figure>
             </div>
+            <div class="column is-3">
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpeg');" onclick="openLightbox('./img/1.jpeg')"></figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/2.jpeg');" onclick="openLightbox('./img/2.jpeg')"></figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpeg');" onclick="openLightbox('./img/3.jpeg')"></figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpeg');" onclick="openLightbox('./img/1.jpeg')"></figure>
+            </div>
+
+            <!-- Repeat for other images -->
+
           </div>
         </div>
       </div>
+
+
+      <!-- Lightbox Container -->
+      <div id="lightbox" class="lightbox has-text-centered">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+
+        <div class="lightbox-content">
+          <button id="prev-btn" class="button is-primary is-light is-rounded" onclick="prevImage()">
+            <img src="./img/arrow-left.png" alt="Previous" class="arrow-icon">
+          </button>
+          <img id="lightbox-img" class="lightbox-img" src="" alt="Expanded Image">
+          <button id="next-btn" class="button is-primary is-light is-rounded" onclick="nextImage()">
+            <img src="./img/arrow-right.png" alt="Next" class="arrow-icon">
+          </button>
+        </div>
+      </div>
+
       <!-- End Work Content -->
       <!-- Begin Contact Content -->
       <div class="section-light contact" id="contact">
