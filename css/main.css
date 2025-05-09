@@ -479,3 +479,10 @@ body.preloader-site {
   width: 50px; /* Resize as needed */
   height: auto;
 }
+
+
+.columns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
