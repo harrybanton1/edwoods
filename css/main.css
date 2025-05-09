@@ -497,3 +497,7 @@ body.preloader-site {
   display: block;
   opacity: 1;
 }
+
+.is-slightly-rounded {
+    border-radius: 10px;
+  }
