@@ -269,43 +269,58 @@
 
     <!-- End Work Content -->
     <!-- Begin Contact Content -->
+
     <div class="section-light contact" id="contact">
       <div class="container">
         <div class="columns is-multiline" data-aos="fade-in-up" data-aos-easing="linear">
-          <div class="column is-12 about-me">
-            <h1 class="title has-text-centered section-title">
-              Get in touch
-            </h1>
+
+          <!-- Centered Heading in Same Width as Form -->
+          <div class="column is-12-mobile is-10-tablet is-offset-1-tablet is-8-desktop is-offset-2-desktop has-text-centered">
+            <h1 class="title section-title">Get in touch</h1>
           </div>
-          <div class="column is-8 is-offset-2">
+
+          <!-- Success Message -->
+          <div class="column is-12">
+            <div id="success-message" class="notification is-success is-light" style="display: none;">
+              <button class="delete" onclick="this.parentElement.style.display='none';"></button>
+              Your message has been sent successfully!
+            </div>
+          </div>
+
+
+          <!-- Contact Form -->
+          <div class="column is-12-mobile is-10-tablet is-offset-1-tablet is-8-desktop is-offset-2-desktop">
             <form action="https://formspree.io/f/xdkgzpne" method="POST">
               <div class="field">
                 <label class="label">Name</label>
                 <div class="control has-icons-left">
-                  <input class="input" type="text" placeholder="Ex. Jane Smith" name="Name" />
+                  <input class="input" type="text" placeholder="Ex. Jane Smith" name="Name" required />
                   <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                   </span>
                 </div>
               </div>
+
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                  <input class="input" type="email" placeholder="Ex. hello@edwoods.com" placeholder="Ex. hello@arctheme.com" name="Email" />
+                  <input class="input" type="email" placeholder="Ex. hello@edwoods.com" name="Email" required />
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
               </div>
+
               <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Enter your message..." placeholder="Textarea" name="Message"></textarea>
+                  <textarea class="textarea" placeholder="Enter your message..." name="Message" rows="5" required></textarea>
                 </div>
               </div>
+
               <div class="field">
-                <div class="control ">
-                  <button class="button submit-button">
+                <div class="control">
+                  <button class="button is-primary is-fullwidth submit-button">
                     Submit&nbsp;&nbsp;
                     <i class="fas fa-paper-plane"></i>
                   </button>
@@ -313,9 +328,15 @@
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </div>
+
+
+
+
+
     <!-- End Contact Content -->
   </div>
   <!-- End Main Content -->
@@ -325,7 +346,7 @@
     <div class="container has-text-left">
       <div class="padding">
         <p>
-          ©Edwoods Tree Care & Fencing
+          ©Edwoods
         </p>
       </div>
     </div>
@@ -342,33 +363,58 @@
       easing: "ease-out",
       duration: 800,
     });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const form = document.querySelector("form");
 
-      form.addEventListener("submit", function(event) {
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const successMessage = document.getElementById("success-message");
+
+      form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const formData = new FormData(form);
 
         fetch(form.action, {
-            method: "POST",
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.ok) {
-              alert("Your message has been sent!");
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              // Show success message
+              successMessage.style.display = "block";
+              setTimeout(() => {
+                successMessage.classList.add("show");
+              }, 10); // slight delay to trigger transition
+
+              // Auto-hide after 5 seconds
+              setTimeout(() => {
+                successMessage.classList.remove("show");
+                setTimeout(() => {
+                  successMessage.style.display = "none";
+                }, 500);
+              }, 5000);
+
               form.reset();
             } else {
-              alert("There was an error sending your message.");
+              return response.json().then(data => {
+                throw new Error(data.error || "There was an error sending your message.");
+              });
             }
           })
-          .catch(error => console.error("Error:", error));
+          .catch(error => {
+            console.error("Error:", error);
+            alert(error.message);
+          });
       });
     });
   </script>
+
+
+
+
+
 </body>
 
 </html>
