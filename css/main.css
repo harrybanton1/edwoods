@@ -31,6 +31,16 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.555), rgba(255, 255, 255, 0.8)),
+      url("../img/forest-gf927bc35f_1920.jpg");
+  }
+}
+
+
 
 .hero .title {
   font-family: 'Kaushan Script', sans-serif;
