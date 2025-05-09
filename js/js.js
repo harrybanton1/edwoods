@@ -120,7 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (
       event.target !== document.getElementById("lightbox-img") &&
       event.target !== document.getElementById("next-btn") &&
-      event.target !== document.getElementById("prev-btn")
+      event.target !== document.getElementById("prev-btn") &&
+      event.target !== document.querySelector("#next-btn img") &&
+      event.target !== document.querySelector("#prev-btn img")
     ) {
       closeLightbox();
     }
