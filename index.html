@@ -194,22 +194,37 @@
 
           <!-- Gallery Images -->
           <!-- Use is-12-mobile for full width on phones, is-6-tablet for 2 per row on tablets, is-3-desktop for 4 per row on desktop -->
-          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/1.jpeg')">
-            <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpeg'); background-size: cover; background-position: center;"></figure>
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/1.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/1.jpg'); background-size: cover; background-position: center;"></figure>
           </div>
 
           <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/2.jpg')">
             <figure class="image is-2by1 work-item" style="background-image: url('./img/2.jpg'); background-size: cover; background-position: center;"></figure>
           </div>
 
-          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/3.jpeg')">
-            <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpeg'); background-size: cover; background-position: center;"></figure>
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/3.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/3.jpg'); background-size: cover; background-position: center;"></figure>
           </div>
 
           <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/4.jpg')">
             <figure class="image is-2by1 work-item" style="background-image: url('./img/4.jpg'); background-size: cover; background-position: center;"></figure>
           </div>
 
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/5.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/5.jpg'); background-size: cover; background-position: center;"></figure>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/6.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/6.jpg'); background-size: cover; background-position: center;"></figure>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/7.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/7.jpg'); background-size: cover; background-position: center;"></figure>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-3-desktop" onclick="openLightbox('./img/8.jpg')">
+            <figure class="image is-2by1 work-item" style="background-image: url('./img/8.jpg'); background-size: cover; background-position: center;"></figure>
+          </div>
           <!-- Repeat for other images -->
           <!-- ... -->
 
@@ -220,19 +235,60 @@
 
 
     <!-- Lightbox Container -->
-    <div id="lightbox" class="lightbox has-text-centered">
+    <div id="lightbox" class="lightbox has-text-centered" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)">
       <span class="close-btn" onclick="closeLightbox()">&times;</span>
 
       <div class="lightbox-content">
-        <button id="prev-btn" class="button is-primary is-light is-rounded" onclick="prevImage()">
-          <img src="./img/arrow-left.png" alt="Previous" class="arrow-icon">
-        </button>
-        <img id="lightbox-img" class="lightbox-img" src="" alt="Expanded Image">
-        <button id="next-btn" class="button is-primary is-light is-rounded" onclick="nextImage()">
-          <img src="./img/arrow-right.png" alt="Next" class="arrow-icon">
-        </button>
+      <button id="prev-btn" class="button is-primary is-light is-rounded" onclick="prevImage()">
+        <img src="./img/arrow-left.png" alt="Previous" class="arrow-icon">
+      </button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Expanded Image">
+      <button id="next-btn" class="button is-primary is-light is-rounded" onclick="nextImage()">
+        <img src="./img/arrow-right.png" alt="Next" class="arrow-icon">
+      </button>
       </div>
     </div>
+    <script>
+      let xDown = null;
+      let yDown = null;
+
+      function handleTouchStart(evt) {
+      const firstTouch = evt.touches[0];
+      xDown = firstTouch.clientX;
+      yDown = firstTouch.clientY;
+      }
+
+      function handleTouchMove(evt) {
+      // Prevent scrolling when swiping on lightbox
+      if (!xDown || !yDown) {
+        return;
+      }
+      evt.preventDefault();
+      }
+
+      function handleTouchEnd(evt) {
+      if (!xDown || !yDown) {
+        return;
+      }
+      const xUp = evt.changedTouches[0].clientX;
+      const yUp = evt.changedTouches[0].clientY;
+
+      const xDiff = xDown - xUp;
+      const yDiff = yDown - yUp;
+
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 30) {
+        // Left swipe
+        nextImage();
+        } else if (xDiff < -30) {
+        // Right swipe
+        prevImage();
+        }
+      }
+      xDown = null;
+      yDown = null;
+      }
+    </script>
 
     <!-- End Work Content -->
     <!-- Begin Contact Content -->
