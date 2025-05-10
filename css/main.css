@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css?family=Lato|Poppins|Kaushan+Script");
 
 .has-vertically-aligned-content {
@@ -457,15 +455,11 @@ body.preloader-site {
   z-index: 9999; /* Ensure it's above everything */
 }
 
-
 .lightbox-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Optional: ensures vertical centering */
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-
 
 .lightbox-img {
   max-width: 90%; /* Adjust width to fit the screen */
@@ -497,6 +491,31 @@ body.preloader-site {
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .lightbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding to prevent the image from touching the edges */
+  }
+
+  .lightbox-img {
+    max-width: 100%; /* Ensure the image fits within the screen width */
+    max-height: 80vh; /* Prevent the image from exceeding the viewport height */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+
+  .lightbox-content {
+    flex-direction: column; /* Stack content vertically on mobile */
+    gap: 10px; /* Add spacing between elements */
+  }
+
+  .close-btn {
+    top: 10px; /* Adjust position for smaller screens */
+    right: 10px;
+    font-size: 20px; /* Slightly smaller close button */
+  }
+}
 
 .columns {
   display: flex;
