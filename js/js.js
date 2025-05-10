@@ -132,3 +132,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("prev-btn").addEventListener("click", prevImage);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const whatsappButton = document.querySelector(".scroll-up-btn");
+
+  if (whatsappButton) {
+    whatsappButton.addEventListener("click", function () {
+      // Reset the button's active state after a short delay
+      setTimeout(() => {
+        whatsappButton.blur(); // Remove focus from the button
+      }, 100);
+    });
+  }
+});

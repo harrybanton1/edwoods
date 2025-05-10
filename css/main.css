@@ -416,6 +416,7 @@ body.preloader-site {
 
 .scroll-up-btn:active {
   background-color: #128C7E; /* WhatsApp's official darker green for active state */
+  outline: none; /* Remove focus outline */
 }
 
 .whatsapp-icon {
