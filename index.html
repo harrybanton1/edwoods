@@ -26,7 +26,7 @@
 
   <a href="https://wa.me/+447789418677" target="_blank" title="Chat on WhatsApp">
     <button id="toTop" class="scroll-up-btn">
-      <img src="./img/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon">
+      <img src="./img/WhatsApp1.png" alt="WhatsApp Logo" class="whatsapp-icon">
 
     </button>
   </a>
@@ -78,7 +78,7 @@
     <div class="section-light about-me" id="about-me">
       <div class="container">
         <div class="column is-12 about-me">
-          <h1 class="title has-text-centered section-title">About Me</h1>
+          <h1 class="title has-text-centered section-title">About Us</h1>
         </div>
         <div class="columns is-multiline is-vcentered">
           <!-- Text Content Column -->
@@ -86,9 +86,7 @@
             <p class="is-size-4 has-text-weight-bold">A Professinal Service</p>
             <br />
             <p>
-              Jake is the driving force behind Edwoods, bringing 8 years of hands-on experience in arboriculture and fencing.
-              Fully certified to NTPC standards, Jake is committed to delivering expert tree care solutions with a strong emphasis on safety, sustainability, and customer satisfaction.
-              Based in Crawley, he proudly serves clients across Sussex and Surrey, offering a personal, professional approach to every project.
+At Edwoods, we’re proud to offer friendly, professional tree surgery, fencing, and landscaping across Sussex, Surrey, and the surrounding areas. With full NPTC certification, we focus on doing the job right - safely, responsibly, and with care for your property and the environment. We’re a local team you can trust, committed to providing a great service to our customers.
             </p>
             <br />
             <hr class="is-divider" />
@@ -139,7 +137,7 @@
           <!-- Arboriculture -->
           <div class="column is-12-mobile is-6-tablet is-4-desktop has-text-centered" data-aos="fade-in" data-aos-easing="linear">
             <img src="./img/treeIcon.png" style="width: 80px; height: auto;">
-            <h2 class="subtitle">ARBORICULTURE</h2>
+            <h2 class="subtitle">TREE CARE</h2>
             <hr />
             <ul class="content">
               <li>Tree Pruning</li>
@@ -248,48 +246,7 @@
       </button>
       </div>
     </div>
-    <script>
-      let xDown = null;
-      let yDown = null;
-
-      function handleTouchStart(evt) {
-      const firstTouch = evt.touches[0];
-      xDown = firstTouch.clientX;
-      yDown = firstTouch.clientY;
-      }
-
-      function handleTouchMove(evt) {
-      // Prevent scrolling when swiping on lightbox
-      if (!xDown || !yDown) {
-        return;
-      }
-      evt.preventDefault();
-      }
-
-      function handleTouchEnd(evt) {
-      if (!xDown || !yDown) {
-        return;
-      }
-      const xUp = evt.changedTouches[0].clientX;
-      const yUp = evt.changedTouches[0].clientY;
-
-      const xDiff = xDown - xUp;
-      const yDiff = yDown - yUp;
-
-      if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 30) {
-        // Left swipe
-        nextImage();
-        } else if (xDiff < -30) {
-        // Right swipe
-        prevImage();
-        }
-      }
-      xDown = null;
-      yDown = null;
-      }
-    </script>
-
+  
     <!-- End Work Content -->
     <!-- Begin Contact Content -->
 
@@ -312,12 +269,12 @@
 
 
           <!-- Contact Form -->
-          <div class="column is-12-mobile is-10-tablet is-offset-1-tablet is-8-desktop is-offset-2-desktop">
+          <div class="column is-12-mobile is-10-tablet is-offset-1-tablet is-half-desktop is-offset-one-quarter-desktop">
             <form action="https://formspree.io/f/xdkgzpne" method="POST">
               <div class="field">
                 <label class="label">Name</label>
                 <div class="control has-icons-left">
-                  <input class="input" type="text" placeholder="Ex. Jane Smith" name="Name" required />
+                  <input class="input" type="text" name="Name" required />
                   <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                   </span>
@@ -327,7 +284,7 @@
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                  <input class="input" type="email" placeholder="Ex. hello@edwoods.com" name="Email" required />
+                  <input class="input" type="email" name="Email" required />
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
@@ -355,7 +312,21 @@
         </div>
       </div>
     </div>
-
+    <style>
+      /* Center the contact form and heading on desktop */
+      @media (min-width: 1024px) {
+      #contact .columns {
+        justify-content: center;
+        display: flex;
+      }
+      #contact .column.is-half-desktop.is-offset-one-quarter-desktop,
+      #contact .column.is-8-desktop.is-offset-2-desktop {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        float: none;
+      }
+      }
+    </style>
 
 
 
