@@ -400,13 +400,22 @@ body.preloader-site {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px; /* Adjust as needed */
-  height: 60px; /* Adjust as needed */
+  width: 60px;
+  height: 60px;
   background-color: #25D366; /* WhatsApp green */
   border: none;
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
+  transition: background-color 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+.scroll-up-btn:hover {
+  background-color: #1DA851; /* Slightly darker green for hover */
+}
+
+.scroll-up-btn:active {
+  background-color: #128C7E; /* WhatsApp's official darker green for active state */
 }
 
 .whatsapp-icon {
@@ -416,11 +425,6 @@ body.preloader-site {
   max-height: 100%;
   object-fit: contain;
   padding-top: 8px;
-}
-
-
-.scroll-up-btn:hover {
-  background-color: #0056b3;
 }
 
 .navbar {
