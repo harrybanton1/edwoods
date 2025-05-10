@@ -248,7 +248,47 @@
       </button>
       </div>
     </div>
+    <script>
+      let xDown = null;
+      let yDown = null;
 
+      function handleTouchStart(evt) {
+      const firstTouch = evt.touches[0];
+      xDown = firstTouch.clientX;
+      yDown = firstTouch.clientY;
+      }
+
+      function handleTouchMove(evt) {
+      // Prevent scrolling when swiping on lightbox
+      if (!xDown || !yDown) {
+        return;
+      }
+      evt.preventDefault();
+      }
+
+      function handleTouchEnd(evt) {
+      if (!xDown || !yDown) {
+        return;
+      }
+      const xUp = evt.changedTouches[0].clientX;
+      const yUp = evt.changedTouches[0].clientY;
+
+      const xDiff = xDown - xUp;
+      const yDiff = yDown - yUp;
+
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 30) {
+        // Left swipe
+        nextImage();
+        } else if (xDiff < -30) {
+        // Right swipe
+        prevImage();
+        }
+      }
+      xDown = null;
+      yDown = null;
+      }
+    </script>
 
     <!-- End Work Content -->
     <!-- Begin Contact Content -->
@@ -393,47 +433,7 @@
       });
     });
   </script>
-  <script>
-    let xDown = null;
-    let yDown = null;
 
-    function handleTouchStart(evt) {
-    const firstTouch = evt.touches[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-    }
-
-    function handleTouchMove(evt) {
-    // Prevent scrolling when swiping on lightbox
-    if (!xDown || !yDown) {
-      return;
-    }
-    evt.preventDefault();
-    }
-
-    function handleTouchEnd(evt) {
-    if (!xDown || !yDown) {
-      return;
-    }
-    const xUp = evt.changedTouches[0].clientX;
-    const yUp = evt.changedTouches[0].clientY;
-
-    const xDiff = xDown - xUp;
-    const yDiff = yDown - yUp;
-
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      if (xDiff > 30) {
-      // Left swipe
-      nextImage();
-      } else if (xDiff < -30) {
-      // Right swipe
-      prevImage();
-      }
-    }
-    xDown = null;
-    yDown = null;
-    }
-  </script>
 
 
 
