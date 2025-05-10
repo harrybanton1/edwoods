@@ -457,11 +457,15 @@ body.preloader-site {
   z-index: 9999; /* Ensure it's above everything */
 }
 
+
 .lightbox-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Optional: ensures vertical centering */
+  text-align: center;
 }
+
 
 .lightbox-img {
   max-width: 90%; /* Adjust width to fit the screen */
